@@ -1,3 +1,8 @@
+/*
+Adapter for the gallery.
+Source : http://javatechig.com/android/android-gridview-example-building-image-gallery-in-android
+ */
+
 package com.tanujgupta.bellytest.instagallery.Adapter;
 
 import android.app.Activity;
@@ -34,7 +39,7 @@ public class GalleryAdapter extends ArrayAdapter {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             row = inflater.inflate(R.layout.gallery_item, parent, false);
 
-            holder = new ViewHolder();
+            holder = new ViewHolder();      // Using the view holder pattern with only single image element
             holder.image = (SmartImageView) row.findViewById(R.id.image);
             row.setTag(holder);
 
@@ -43,7 +48,7 @@ public class GalleryAdapter extends ArrayAdapter {
         }
 
         String imagrUrl = data.get(position).getUrlThumbnail();
-        holder.image.setImageUrl(imagrUrl);
+        holder.image.setImageUrl(imagrUrl);   // load image directly from the url by using the SmartImageView library
 
         return row;
     }

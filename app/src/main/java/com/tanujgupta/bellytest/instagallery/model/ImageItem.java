@@ -1,3 +1,5 @@
+//Model class for storing each images thumbnail and standard size image url
+
 package com.tanujgupta.bellytest.instagallery.model;
 
 
